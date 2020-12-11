@@ -1,0 +1,11 @@
+1. ¿Que inciso le toco y en qué manera cree que eso mejorara su programa?
+Me toco el inciso de hilos y se puede mejorar con un hilo que este dando un aviso cada cierto tiempo para que el usuario haga
+una nueva claudilist, es sencillo pero es lo mejor que se me ocurrio 
+2. ¿Cuál es el tema en el que más debilidad siente y por qué?
+Hilos, no lograba comprender muy bien lo que hacia, pueda que sea facil pero me enredo en lo facil 
+3. ¿Explicación de como planea incluir ese tema en el que siente debilidad dentro del
+laboratorio que se le fue asignado?
+lo planeo implementar con un hilo de recordatorio
+4. La verdad tus laboratorios son de lo mejor, siempre sacas algo divertido y eso es increible, me gustaron varias cosas de tus 
+laboratorios en especial las formas unicas en que las redactas y sinceramente no hay nada que no me haya gustado, segui asi
+porque por lo menos a mi en lo personal me motivan a hacer un bonito laboratorio
