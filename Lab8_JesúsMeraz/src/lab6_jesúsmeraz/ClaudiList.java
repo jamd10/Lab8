@@ -111,7 +111,6 @@ public class ClaudiList {
             JFileChooser jfc = new JFileChooser();
             FileNameExtensionFilter filtro = new FileNameExtensionFilter("Archivos de texto", "txt");//CREAMOS EL FILTRO
             jfc.setFileFilter(filtro);//Lo agrega por defecto 
-
             int seleccion = jfc.showOpenDialog(null);
             if (seleccion == JFileChooser.APPROVE_OPTION) {
                 fichero = jfc.getSelectedFile();
@@ -120,7 +119,7 @@ public class ClaudiList {
                 br = new BufferedReader(fr);
                 String Linea;
                 // tf_universo.setText("");
-                Texto = "Canciones de la PlayList: \n";
+                Texto = "Peliculas de ClaudiList: \n";
                 while ((Linea = br.readLine()) != null) {
                     Texto += Linea;
                     Texto += "\n";

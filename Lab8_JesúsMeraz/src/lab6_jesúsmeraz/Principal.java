@@ -20,7 +20,7 @@ public class Principal extends javax.swing.JFrame {
             try {
                 for (sec = 0; sec < 1000; sec++) {
                     barrita.setValue(sec);
-                    tiempo.sleep(50);
+                    Barrita.sleep(10);
                 }
             } catch (Exception e) {
             }
@@ -727,8 +727,9 @@ public class Principal extends javax.swing.JFrame {
         CL.add(((Programas) jc_Seres.getSelectedItem()));
         JOptionPane.showMessageDialog(ClaudiList_crear, "Muchas gracias por haber agregado una Claudilist, tenga buen dia :)");
         nombre.setText("");
-        Barrita.start();
-        tiempo.start();
+//       // inicia la barra 
+//        Barrita.start();
+//        tiempo.start();
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -777,10 +778,10 @@ public class Principal extends javax.swing.JFrame {
     }//GEN-LAST:event_jMenuItem2ActionPerformed
 
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
-        ClaudiList u = new ClaudiList();
-        GG.setText(u.Abrir());
-        u.cargarArchivo();
-        CLA = u;
+        ClaudiList CL = new ClaudiList();
+        GG.setText(CL.Abrir());
+        CL.cargarArchivo();
+        CLA = CL;
         DefaultComboBoxModel Modelo = new DefaultComboBoxModel();
         for (int i = 0; i < CLA.getCanciones().size(); i++) {
             Modelo.addElement(CLA.getCanciones().get(i));
@@ -788,6 +789,7 @@ public class Principal extends javax.swing.JFrame {
         jc_Seres.setModel(Modelo);
         GG1.setModel(Modelo);
         GG2.setModel(Modelo);
+        Barrita.start();
 
     }//GEN-LAST:event_jMenuItem3ActionPerformed
 
