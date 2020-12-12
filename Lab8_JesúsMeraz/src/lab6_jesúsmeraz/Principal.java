@@ -18,7 +18,7 @@ public class Principal extends javax.swing.JFrame {
     Thread Barrita = new Thread() {
         public void run() {
             try {
-                for (sec = 0; sec < CL.size();) {
+                for (sec = 0; sec < 1000; sec++) {
                     barrita.setValue(sec);
                     tiempo.sleep(50);
                 }
@@ -29,12 +29,13 @@ public class Principal extends javax.swing.JFrame {
     Thread tiempo = new Thread() {
         public void run() {
             try {
-                for (seg = 0; seg < 20; seg++) {
-                    barrita.setValue(seg);
-                    tiempo.sleep(10);
+                for (seg = 0; seg < 100; seg++) {
+
                     if (seg == 60) {
                         JOptionPane.showMessageDialog(null, "Recuerde que tiene que crear una nueva ClaudiList si quiere ver avanzar la barrita");
+
                     }
+                    tiempo.sleep(200);
                 }
             } catch (Exception e) {
             }
@@ -600,7 +601,7 @@ public class Principal extends javax.swing.JFrame {
         jMenu1.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
 
         jMenuItem1.setFont(new java.awt.Font("Monospaced", 1, 12)); // NOI18N
-        jMenuItem1.setText("PlayList");
+        jMenuItem1.setText("ClaudiList");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jMenuItem1ActionPerformed(evt);
@@ -726,10 +727,8 @@ public class Principal extends javax.swing.JFrame {
         CL.add(((Programas) jc_Seres.getSelectedItem()));
         JOptionPane.showMessageDialog(ClaudiList_crear, "Muchas gracias por haber agregado una Claudilist, tenga buen dia :)");
         nombre.setText("");
-        tiempo.start();
-
         Barrita.start();
-        sec++;
+        tiempo.start();
     }//GEN-LAST:event_jButton2MouseClicked
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
@@ -755,8 +754,11 @@ public class Principal extends javax.swing.JFrame {
                 jc_Seres.setModel(Modelo);
                 GG1.setModel(Modelo);
                 GG2.setModel(Modelo);
-
                 JOptionPane.showMessageDialog(ClaudiList_crear, "Se ha creado correctamente tu programa, tenga un buen dia");
+                Name.setText("");
+                puntuacion.setValue(1);
+                Años.setText("");
+
             } catch (Exception e) {
                 JOptionPane.showMessageDialog(ClaudiList_crear, "Oh no, ocurrio un error, revise de nuevo a ver si todo esta bien");
             }
@@ -809,6 +811,9 @@ public class Principal extends javax.swing.JFrame {
                 CLA.getCanciones().get(Pos).setTipo(tipo);
                 CLA.escribirArchivo();
                 JOptionPane.showMessageDialog(Modificar, "Se ha Modificado el ser correctamente, tenga un buen dia :)");
+                Name1.setText("");
+                puntuacion1.setValue(1);
+                Años1.setText("");
             } catch (IOException e) {
                 JOptionPane.showMessageDialog(ClaudiList_crear, "Oh no, ocurrio un error, revise de nuevo a ver si todo esta bien");
             }
