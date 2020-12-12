@@ -14,12 +14,13 @@ public class Principal extends javax.swing.JFrame {
 
     private int sec = 0;
     private int seg;
+    // funcion del hilo
     Thread Barrita = new Thread() {
         public void run() {
             try {
-                for (seg = 0; sec < CL.size()+CL.size();) {
+                for (sec = 0; sec < CL.size();) {
                     barrita.setValue(sec);
-                    tiempo.sleep(10000);
+                    tiempo.sleep(50);
                 }
             } catch (Exception e) {
             }
