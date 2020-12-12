@@ -1,9 +1,20 @@
-package lab6_jesúsmeraz;
+package Lab6_JesúsMeraz;
 
-public class Pelis_series {
+public class Programas {
 
     private String nombre, tipo, genero;
     private int Puntuacion, años;
+
+    public Programas() {
+    }
+
+    public Programas(String nombre, String tipo, String genero, int Puntuacion, int años) {
+        this.nombre = nombre;
+        this.tipo = tipo;
+        this.genero = genero;
+        this.Puntuacion = Puntuacion;
+        this.años = años;
+    }
 
     public String getNombre() {
         return nombre;
@@ -45,16 +56,9 @@ public class Pelis_series {
         this.años = años;
     }
 
-    public Pelis_series(String nombre, String tipo, String genero, int Puntuacion, int años) {
-        this.nombre = nombre;
-        this.tipo = tipo;
-        this.genero = genero;
-        this.Puntuacion = Puntuacion;
-        this.años = años;
-    }
-
     @Override
     public String toString() {
         return nombre;
     }
+
 }

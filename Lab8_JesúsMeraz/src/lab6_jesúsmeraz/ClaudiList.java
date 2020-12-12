@@ -1,4 +1,9 @@
-package lab6_jesúsmeraz;
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
+package Lab6_JesúsMeraz;
 
 import java.io.BufferedReader;
 import java.io.BufferedWriter;
@@ -19,7 +24,7 @@ public class ClaudiList {
 
     private File archivo = null;
     String Nombre;
-    ArrayList<Pelis_series> PelisSeries = new ArrayList();
+    ArrayList<Programas> ListaProgramas = new ArrayList();
 
     public File getArchivo() {
         return archivo;
@@ -37,18 +42,17 @@ public class ClaudiList {
         this.Nombre = Nombre;
     }
 
-    public ArrayList<Pelis_series> getCanciones() {
-        return PelisSeries;
+    public ArrayList<Programas> getCanciones() {
+        return ListaProgramas;
     }
 
-    public void setCanciones(ArrayList<Pelis_series> Seres_Vivos) {
-        this.PelisSeries = Seres_Vivos;
+    public void setCanciones(ArrayList<Programas> Seres_Vivos) {
+        this.ListaProgramas = Seres_Vivos;
     }
 
-    public void Agregar_Seres_Vivos(Pelis_series seres_vivos) {
-        this.PelisSeries.add(seres_vivos);
-    }
-
+//    public void Agregar_Seres_Vivos(Canciones seres_vivos) {
+//        this.Canciones.add(seres_vivos);
+//    }
     public void creararchivo(String path) {
         archivo = new File(path);
     }
@@ -59,12 +63,12 @@ public class ClaudiList {
         try {
             fw = new FileWriter(archivo, false);
             bw = new BufferedWriter(fw);
-            for (Pelis_series t : PelisSeries) {
+            for (Programas t : ListaProgramas) {
                 bw.write(t.getNombre() + "|");
                 bw.write(t.getPuntuacion() + "|");
-                bw.write(t.getTipo() + "|");
                 bw.write(t.getAños() + "|");
                 bw.write(t.getGenero() + "|");
+                bw.write(t.getTipo() + "|");
                 bw.write("\n");
             }
 
@@ -79,22 +83,18 @@ public class ClaudiList {
     public void cargarArchivo() {
         if (archivo.exists()) {
             Scanner sc = null;
-            PelisSeries = new ArrayList();
+            ListaProgramas = new ArrayList();
             try {
                 sc = new Scanner(archivo);
                 sc.useDelimiter("\\|");
                 while (sc.hasNext()) {
                     String Nombre = sc.next();
                     int puntuacion = sc.nextInt();
-                    int ano = sc.nextInt();
-                    String tipo = sc.next();
+                    int año = sc.nextInt();
                     String genero = sc.next();
-                    String artista = sc.next();
-                    String album = sc.next();
-                    PelisSeries.add(new Pelis_series(Nombre, tipo, genero, puntuacion, ano));
-
+                    String tipo = sc.next();
+                    ListaProgramas.add(new Programas(Nombre, tipo, genero, puntuacion, año));
                 }
-                System.out.println("Las canciones" + PelisSeries);
             } catch (Exception e) {
             }
             sc.close();
@@ -120,9 +120,8 @@ public class ClaudiList {
                 br = new BufferedReader(fr);
                 String Linea;
                 // tf_universo.setText("");
-                Texto = "series o peliculas de la ClaudiList: \n";
+                Texto = "Canciones de la PlayList: \n";
                 while ((Linea = br.readLine()) != null) {
-                    // System.out.println(Linea);
                     Texto += Linea;
                     Texto += "\n";
                 }
